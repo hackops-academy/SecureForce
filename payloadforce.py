@@ -27,20 +27,33 @@ class PayloadForceCLI:
         self.listener = None
         self.generated_payloads = []
         self.show_banner()
-    
-    def show_banner(self):
+def show_banner(self):
         """Display the banner"""
+        width = 88  # interior width of the box (excluding the two border chars)
+
+        def line(text="", color=Fore.CYAN, center=False):
+            """Pad a line of text to fit the box width exactly."""
+            if center:
+                text = text.center(width)
+            else:
+                text = text.ljust(width)
+            return f"{Fore.CYAN}║{color}{text}{Fore.CYAN}║"
+
+        top    = f"{Fore.CYAN}╔{'═' * width}╗"
+        bottom = f"{Fore.CYAN}╚{'═' * width}╝"
+
         banner = f"""
-{Fore.CYAN}╔═════════════════════════════════════════════════════════════════════════════════╗
-║                                                                                            ║
-║           {Fore.MAGENTA}PayloadForce v1.0 - Payload Generator & Executor{Fore.CYAN}        ║
-║                                                                                            ║
-║    Professional payload generation and reverse shell handler                               ║
-║            For Authorized Penetration Testing Only                                         ║
-║                                                                                            ║
-╚═══════════════════════════════════════════════════════════════════════════╝{Style.RESET_ALL}
+{top}
+{line()}
+{line('PayloadForce v1.0 - Payload Generator & Executor', color=Fore.MAGENTA, center=True)}
+{line()}
+{line('Professional payload generation and reverse shell handler', center=True)}
+{line('For Authorized Penetration Testing Only', center=True)}
+{line()}
+{bottom}{Style.RESET_ALL}
 """
         print(banner)
+    
     
     def show_help(self):
         """Display help menu"""
