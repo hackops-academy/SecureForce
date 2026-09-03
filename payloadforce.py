@@ -31,14 +31,14 @@ class PayloadForceCLI:
     def show_banner(self):
         """Display the banner"""
         banner = f"""
-{Fore.CYAN}╔═══════════════════════════════════════════════════════════════╗
-║                                                               ║
+{Fore.CYAN}╔═════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                            ║
 ║           {Fore.MAGENTA}PayloadForce v1.0 - Payload Generator & Executor{Fore.CYAN}        ║
-║                                                               ║
-║    Professional payload generation and reverse shell handler ║
-║            For Authorized Penetration Testing Only          ║
-║                                                               ║
-╚═══════════════════════════════════════════════════════════════╝{Style.RESET_ALL}
+║                                                                                            ║
+║    Professional payload generation and reverse shell handler                               ║
+║            For Authorized Penetration Testing Only                                         ║
+║                                                                                            ║
+╚═══════════════════════════════════════════════════════════════════════════╝{Style.RESET_ALL}
 """
         print(banner)
     
